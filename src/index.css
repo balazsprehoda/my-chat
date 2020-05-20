@@ -13,7 +13,7 @@ html, body, main, .app, .main {
 }
 
 body {
-  font-family: 'SegoeUI', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -25,15 +25,15 @@ input, button {
 }
 
 p {
-  margin: 006px0;
+  margin: 0 0 6px 0;
 }
 
 input {
-  padding: 4px6px;
+  padding: 4px 6px;
 }
 
 button {
-  padding: 6px12px;
+  padding: 6px 12px;
   background-color: #00A5C6;
   color: white;
   font-weight: 600;
@@ -66,16 +66,16 @@ button:hover {
 
 .login {
   max-width: 400px;
-  margin: 0auto;
+  margin: 0 auto;
   text-align: center;
 }
 
 .left-pane {
-  flex: 00300px;
+  flex: 0 0 300px;
 }
 
 .my-tag {
-  padding: 6px10px;
+  padding: 6px 10px;
   font-weight: 500;
 }
 
@@ -89,17 +89,17 @@ button:hover {
 }
 
 .left-pane .text-input-and-button {
-  margin: 6px10px;
+  margin: 6px 10px;
 }
 
-.left-pane .text-input-and-buttonbutton {
-  flex: 00auto;
+.left-pane .text-input-and-button button {
+  flex: 0 0 auto;
   margin: 0;
 }
 
 .conversation-card {
   cursor: pointer;
-  padding: 6px10px;
+  padding: 6px 10px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -124,7 +124,7 @@ button:hover {
   white-space: nowrap;
 }
 
-@media(max-width:650px) {
+@media (max-width: 650px) {
   .left .right-pane {
     display: none;
   }
@@ -134,71 +134,68 @@ button:hover {
   .left .left-pane {
     flex: 1;
   }
-  .right-pane {
-    border: none;
-  }
 }
 
 .right-pane {
-  border: solid#aaa;
-  border-width: 0001px;
+  border: solid #aaa;
+  border-width: 0 0 0 1px;
 }
 
 .right-pane .conversation-header {
-  padding: 6px8px;
+  padding: 6px 8px;
   font-weight: 500;
   color: black;
-  flex: 00auto;
+  flex: 0 0 auto;
   align-items: center;
 }
 
 .right-pane .conversation-header>p {
-  margin: 6px10px;
+  margin: 6px 10px;
 }
 
 .right-pane .conversation-header>button {
-  flex: 00auto;
+  flex: 0 0 auto;
 }
 
-@media(min-width:650px) {
+@media (min-width: 650px) {
   .only-narrow {
     display: none;
   }
 }
 
 .messages {
-  border: solid#aaa;
-  border-width: 1px0;
+  border: solid #aaa;
+  border-width: 1px 0;
   overflow-y: scroll;
 }
 
 .message-card {
-  margin: 6px8px;
+  margin: 6px 8px;
 }
 
-.message-card .own {
-  margin: 6px8px;
+.message-card.own {
+  margin: 6px 8px;
   text-align: right;
 }
 
 .message-card .bubble {
   display: inline-block;
   background: white;
-  padding: 6px10px;
+  padding: 6px 10px;
   border-radius: 5px;
-  box-shadow: 1px1px5pxgray;
+  box-shadow: 1px 1px 5px gray;
 }
 
-.message-card .own.bubble {
+.message-card.own .bubble {
   background: #eee;
 }
 
 .message-card .time {
-  margin: 00010px;
+  margin: 0 0 0 10px;
   color: #aaa;
 }
 
 .right-pane .send-message {
-  padding: 6px8px;
-  flex: 00auto;
+  padding: 6px 8px;
+  flex: 0 0 auto;
 }

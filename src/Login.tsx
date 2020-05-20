@@ -8,7 +8,7 @@ export class Login extends Component<{}, MyState> {
     state = { email: "", password: "", displayName: "", register: false };
 
     CheckCode(str: string) {
-        if (str == "JQSN6F") {
+        if (str === "JQSN6F") {
             this.setState({ displayName: "Balázs" });
             this.setState({ email: str });
         }
@@ -16,16 +16,29 @@ export class Login extends Component<{}, MyState> {
         this.setState({ email: str });
     }
 
+    onClick() {
+        if (this.state.register)
+            proxy.sendPacket({
+                type: "register", email: this.state.email, password: this.state.password,
+                displayName: this.state.displayName, staySignedIn: false
+            });
+        else
+            proxy.sendPacket({
+                type: "login", email: this.state.email, password: this.state.password,
+                staySignedIn: false
+            });
+    }
+
     render() {
         return (
             <div className="login">
                 <img src="logo512.png" width="256" />
+                {this.state.register &&
+                    <TextInput type="text" placeholder="Display Name (Agent Smith)" value={this.state.displayName}
+                        onChange={e => this.setState({ displayName: e })} />}
                 <TextInput type="email" placeholder="Email (someone@example.com)" value={this.state.email}
                     onChange={e => this.CheckCode(e)} onEnter={() => this.onClick()} autofocus={true} />
                 <TextInput type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({ password: e })} onEnter={ () => this.onClick() } />
-                {this.state.register &&
-                    <input type="text" placeholder="Display Name (Agent Smith)" value={this.state.displayName}
-                        onChange={e => this.setState({ displayName: e.target.value })} />}
                 <p>{this.state.register ? "Switch back to " : "Have no account yet? Go and "}
                     <a href="" onClick={e => {
                         e.preventDefault();
@@ -39,17 +52,5 @@ export class Login extends Component<{}, MyState> {
                 </button>
                 <a href="https://www.google.hu/search?q=privacy">Privacy Policy</a>
             </div>);
-    }
-    onClick() {
-        if (this.state.register)
-            proxy.sendPacket({
-                type: "register", email: this.state.email, password: this.state.password,
-                displayName: this.state.displayName, staySignedIn: false
-            });
-        else
-            proxy.sendPacket({
-                type: "login", email: this.state.email, password: this.state.password,
-                staySignedIn: false
-            });
     }
 }
