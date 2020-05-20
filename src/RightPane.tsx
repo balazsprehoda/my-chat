@@ -36,9 +36,6 @@ export class RightPane extends Component<{ conversation?: ConversationDto, onBac
                                 onClick={() => this.props.onBack()}>Back</button>
                             <p>{this.props.conversation?.name}</p>
                         </div>
-                        <div className="conversation-header">
-                            <p>{this.props.conversation?.name}</p>
-                        </div>
                         <div className="messages">
                             {this.props.conversation?.lastMessages.map(x =>
                                 <MessageCard key={x.id} message={x}
