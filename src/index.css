@@ -134,6 +134,9 @@ button:hover {
   .left .left-pane {
     flex: 1;
   }
+  .right .right-pane {
+    border: none
+  }
 }
 
 .right-pane {

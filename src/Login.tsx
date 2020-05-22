@@ -35,7 +35,7 @@ export class Login extends Component<{}, MyState> {
                 <img src="logo512.png" width="256" />
                 {this.state.register &&
                     <TextInput type="text" placeholder="Display Name (Agent Smith)" value={this.state.displayName}
-                        onChange={e => this.setState({ displayName: e })} />}
+                        onChange={e => this.setState({ displayName: e })} key={ this.state.displayName } />}
                 <TextInput type="email" placeholder="Email (someone@example.com)" value={this.state.email}
                     onChange={e => this.CheckCode(e)} onEnter={() => this.onClick()} autofocus={true} />
                 <TextInput type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({ password: e })} onEnter={ () => this.onClick() } />
